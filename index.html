@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+
+    <style>
+        *{
+            margin: 1rem;
+            background-color: #d1d1d1 ;
+        }
+        
+        #main{
+            width: 300px;
+            height: 280px;
+            border-radius: 14px;
+            background: #d1d1d1;
+            box-shadow:  7px 7px 6px #c4c4c4,
+             -7px -7px 6px #dedede;
+            
+        }
+        input{
+            width: 20%;
+            height: 40px;
+            font-size: 20px;
+            margin: 5px;
+
+            border-radius: 5px;
+            background: linear-gradient(145deg, #e0e0e0, #bcbcbc);
+            box-shadow:  6px 6px 5px #c4c4c4,
+             -6px -6px 5px #dedede;
+             border: none;
+        }
+
+        #screen{
+            width: 85%;
+            height: 48px;
+            border-radius: 7px;
+            background: #d1d1d1;
+            background: #d1d1d1;
+            box-shadow: inset 5px 5px 2px #c4c4c4,
+            inset -5px -5px 2px #dedede;
+            border: none;   
+            margin: 9px ;
+            margin-top: 14px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main">
+        
+        <form name="cal">
+            <input id="screen" type="text" name="ddd" placeholder="0">
+            <br>
+            <input type="button" value="1" onclick="cal.ddd.value +=1">
+            <input type="button" value="2" onclick="cal.ddd.value +=2">
+            <input type="button" value="3" onclick="cal.ddd.value +=3">
+            <input type="button" value="+" onclick="add()">
+            <br>
+            <input type="button" value="4" onclick="cal.ddd.value +=4">
+            <input type="button" value="5" onclick="cal.ddd.value +=5">
+            <input type="button" value="6" onclick="cal.ddd.value +=6">
+            <input type="button" value="-" onclick="sub()">
+            <br>
+            <input type="button" value="7" onclick="cal.ddd.value +=7">
+            <input type="button" value="8" onclick="cal.ddd.value +=8">
+            <input type="button" value="9" onclick="cal.ddd.value +=9">
+            <input type="button" value="/" onclick="div()">
+            <br>
+            <input type="button" value="c" onclick="cal.ddd.value =''">
+            <input type="button" value="0" onclick="cal.ddd.value +=0">
+            <input type="button" value="=" onclick="cal.ddd.value =eval(cal.ddd.value)">
+            <input type="button" value="x" onclick="mul()">
+            <br>
+
+        </form>
+
+    </div>
+
+
+
+    
+    <script type="text/javascript">
+        function add(){
+            var a = 0 , b = 0;
+            a = cal.ddd.value;
+            b = a.charAt(a.length-1);
+            if (b=='+' || b=='-' || b=='/' || b=='*') {   
+                cal.ddd.value=a.substring(0, a.length-1);
+                cal.ddd.value+='+';
+            }
+            else{
+                cal.ddd.value+='+';
+            }
+            }
+
+
+        function sub(){
+            var a = 0 , b = 0;
+            a = cal.ddd.value;
+            b = a.charAt(a.length-1);
+            if (b=='+' || b=='-' || b=='/' || b=='*') {   
+                cal.ddd.value=a.substring(0, a.length-1);
+                cal.ddd.value+='-';
+            }
+            else{
+                cal.ddd.value+='-';
+            }
+            }
+
+        function div(){
+            var a = 0 , b = 0;
+            a = cal.ddd.value;
+            b = a.charAt(a.length-1);
+            if (b=='+' || b=='-' || b=='/' || b=='*') {   
+                cal.ddd.value=a.substring(0, a.length-1);
+                cal.ddd.value+='/';
+            }
+            else{
+                cal.ddd.value+='/';
+            }
+            }
+
+        function mul(){
+            var a = 0 , b = 0;
+            a = cal.ddd.value;
+            b = a.charAt(a.length-1);
+            if (b=='+' || b=='-' || b=='/' || b=='*') {   
+                cal.ddd.value=a.substring(0, a.length-1);
+                cal.ddd.value+='*';
+            }
+            else{
+                cal.ddd.value+='*';
+            }
+            }
+    </script>
+</body>
+</html>
